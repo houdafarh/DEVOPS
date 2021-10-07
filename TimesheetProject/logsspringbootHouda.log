@@ -1,0 +1,32 @@
+2021-10-07 23:09:47.924  INFO 15580 --- [main] t.e.s.test.EntrepriseServiceImplTest     : Starting EntrepriseServiceImplTest on DESKTOP-7591FHM with PID 15580 (started by 2019 in C:\Users\2019\Documents\GitHub\DEVOPS\TimesheetProject)
+2021-10-07 23:09:47.927  INFO 15580 --- [main] t.e.s.test.EntrepriseServiceImplTest     : No active profile set, falling back to default profiles: default
+2021-10-07 23:09:49.987  INFO 15580 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2021-10-07 23:09:50.137  INFO 15580 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 135ms. Found 6 repository interfaces.
+2021-10-07 23:09:50.981  INFO 15580 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d946a62c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-10-07 23:09:51.531  INFO 15580 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-10-07 23:09:51.803  INFO 15580 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-10-07 23:09:51.993  INFO 15580 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2021-10-07 23:09:52.149  INFO 15580 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2021-10-07 23:09:52.152  INFO 15580 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2021-10-07 23:09:52.469  INFO 15580 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2021-10-07 23:09:52.845  INFO 15580 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-10-07 23:09:57.291  INFO 15580 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-10-07 23:09:58.197  INFO 15580 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2021-10-07 23:10:00.568  INFO 15580 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-10-07 23:10:00.819  WARN 15580 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-10-07 23:10:01.827  INFO 15580 --- [main] t.e.s.test.EntrepriseServiceImplTest     : Started EntrepriseServiceImplTest in 14.716 seconds (JVM running for 16.696)
+2021-10-07 23:10:02.193  INFO 15580 --- [main] t.e.s.test.EntrepriseServiceImplTest     : Starting find Entreprise test method
+2021-10-07 23:10:02.359  INFO 15580 --- [main] t.e.s.test.EntrepriseServiceImplTest     : Entreprise with id 7 exists
+2021-10-07 23:10:02.364  INFO 15580 --- [main] t.e.s.test.EntrepriseServiceImplTest     : Entreprise with id 7 was found successfuly : id(7) , Name(Samsung) and Social Reason(EURL)
+2021-10-07 23:10:02.394  INFO 15580 --- [main] t.e.s.test.EntrepriseServiceImplTest     : Starting delete Entreprise test method
+2021-10-07 23:10:02.458  INFO 15580 --- [main] t.e.s.test.EntrepriseServiceImplTest     : Entreprise with id 8 exists
+2021-10-07 23:10:02.475  INFO 15580 --- [main] t.e.s.test.EntrepriseServiceImplTest     : Entreprise deleted successfuly
+2021-10-07 23:10:02.480  INFO 15580 --- [main] t.e.s.test.EntrepriseServiceImplTest     : Starting add Entreprise test method
+2021-10-07 23:10:02.510  INFO 15580 --- [main] t.e.s.test.EntrepriseServiceImplTest     : Adding new Entreprise with id : 9
+2021-10-07 23:10:02.531  INFO 15580 --- [main] t.e.s.test.EntrepriseServiceImplTest     : Entreprise with id(9) , Name(Samsung) and Social Reason(EURL) added successfuly
+2021-10-07 23:10:02.576  INFO 15580 --- [Thread-1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-10-07 23:10:02.587  INFO 15580 --- [Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-10-07 23:10:02.591  INFO 15580 --- [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-10-07 23:10:02.612  INFO 15580 --- [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
