@@ -23,3 +23,28 @@
 2021-10-07 22:55:30.024  WARN 11752 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2021-10-07 22:55:30.309  INFO 11752 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
 2021-10-07 22:55:30.313  INFO 11752 --- [main] SpringBootCoreDataJpaMvcRest1Application : Started TimesheetSpringBootCoreDataJpaMvcRest1Application in 12.213 seconds (JVM running for 13.261)
+2021-10-07 22:04:08.567  INFO 41944 --- [main] SpringBootCoreDataJpaMvcRest1Application : Starting TimesheetSpringBootCoreDataJpaMvcRest1Application on LAPTOP-K08V0PT9 with PID 41944 (C:\Users\sonia\Documents\GitHub\DEVOPS\TimesheetProject\target\classes started by sonia in C:\Users\sonia\Documents\GitHub\DEVOPS\TimesheetProject)
+2021-10-07 22:04:08.573  INFO 41944 --- [main] SpringBootCoreDataJpaMvcRest1Application : No active profile set, falling back to default profiles: default
+2021-10-07 22:04:09.958  INFO 41944 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2021-10-07 22:04:10.130  INFO 41944 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 158ms. Found 6 repository interfaces.
+2021-10-07 22:04:10.801  INFO 41944 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a37d904a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-10-07 22:04:11.511  INFO 41944 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-10-07 22:04:11.564  INFO 41944 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-07 22:04:11.565  INFO 41944 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2021-10-07 22:04:11.871  INFO 41944 --- [main] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-10-07 22:04:11.871  INFO 41944 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3196 ms
+2021-10-07 22:04:12.212  INFO 41944 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-10-07 22:04:12.534  INFO 41944 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-10-07 22:04:12.653  INFO 41944 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2021-10-07 22:04:12.875  INFO 41944 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2021-10-07 22:04:12.877  INFO 41944 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2021-10-07 22:04:13.203  INFO 41944 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2021-10-07 22:04:13.525  INFO 41944 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-10-07 22:04:15.658  INFO 41944 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-10-07 22:04:16.332  INFO 41944 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2021-10-07 22:04:17.230  INFO 41944 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-10-07 22:04:17.344  WARN 41944 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-10-07 22:04:17.722  INFO 41944 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2021-10-07 22:04:17.726  INFO 41944 --- [main] SpringBootCoreDataJpaMvcRest1Application : Started TimesheetSpringBootCoreDataJpaMvcRest1Application in 10.127 seconds (JVM running for 11.495)
