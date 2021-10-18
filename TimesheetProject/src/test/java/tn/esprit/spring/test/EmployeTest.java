@@ -49,7 +49,7 @@ public class EmployeTest {
 	
 	
 	@Test
-	public void testMettreAjourEmailByEmployeId()throws ParseException{
+	public void testMettreAjourEmailByEmployeId(){
 		Employe emp  = new Employe("kallel","khaled","Khaled.kallel@ssiiconsulting.tn",true,Role.INGENIEUR);
 		int Id = employeServImp.ajouterEmploye(emp);
 		if(emp.getId()== Id){
@@ -131,7 +131,7 @@ public class EmployeTest {
 	
 	@Test
 	public void testAffecterContratAEmploye(){
-		Date d=new Date(12-01-2021);
+		Date d=new Date(12/01/2021);
 		Contrat cont = new Contrat(d,"CDI", 120.3f);
 		Employe emp  = new Employe("kallel","khaled","Khaled.kallel@ssiiconsulting.tn",true,Role.INGENIEUR);
 		int empId = employeServImp.ajouterEmploye(emp);
