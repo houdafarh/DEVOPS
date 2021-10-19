@@ -2,11 +2,13 @@ package tn.esprit.spring.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import tn.esprit.spring.aspects.TrackExecTime;
 import tn.esprit.spring.entities.Departement;
 import tn.esprit.spring.entities.Employe;
 import tn.esprit.spring.entities.Entreprise;
@@ -21,8 +23,13 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 	@Autowired
 	DepartementRepository deptRepoistory;
 	
+	@TrackExecTime
 	public int ajouterEntreprise(Entreprise entreprise) {
 		entrepriseRepoistory.save(entreprise);
+		List<Entreprise> list=new ArrayList<>();
+		for(int i=1;i<=10000;i++) {
+			list.add(new Entreprise());
+		}
 		return entreprise.getId();
 	}
 
@@ -51,7 +58,6 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 		for(Departement dep : entrepriseManagedEntity.getDepartements()){
 			depNames.add(dep.getName());
 		}
-		
 		return depNames;
 	}
 

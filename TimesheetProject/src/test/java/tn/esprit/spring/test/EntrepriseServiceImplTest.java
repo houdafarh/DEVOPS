@@ -2,7 +2,13 @@ package tn.esprit.spring.test;
 
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,7 +18,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import tn.esprit.spring.entities.Departement;
 import tn.esprit.spring.entities.Entreprise;
+import tn.esprit.spring.repository.EntrepriseRepository;
 import tn.esprit.spring.services.EntrepriseServiceImpl;
 
 @RunWith(SpringRunner.class)
@@ -23,52 +31,125 @@ private static final Logger l = (Logger) LogManager.getLogger(EntrepriseServiceI
 	@Autowired
 	EntrepriseServiceImpl es;
 	
-	//Unit Test for CRUD methods : 
+	@Autowired
+	EntrepriseRepository er;
 	
-	//public int ajouterEntreprise(Entreprise entreprise);
 	@Test
-	public void testAjouterEntreprise() {
-		l.info("Starting add Entreprise test method");
+	public void testAddEntreprise() {
+		try {
 		Entreprise E = new Entreprise("Samsung","EURL");
 		int Id = es.ajouterEntreprise(E);
-		l.info("Adding new Entreprise with id : " + Id);
-		Entreprise Ese = es.getEntrepriseById(Id);
-		assertNotNull(Ese);
-		l.info("Entreprise with id(" + Ese.getId() 
-				+") , Name(" + Ese.getName() +") and Social Reason(" + Ese.getRaisonSocial() + ")" + " added successfuly");
+		assertNotNull(Id);
 		es.deleteEntrepriseById(Id);
+		l.info("Add Entreprise works");
+		} catch (NullPointerException e) {
+			l.error(e.getMessage());
+		}
 	}
 	
-
-	//public void deleteEntrepriseById(int entrepriseId);
-	//added a getAllEntreprises service to test % size of list 
 	@Test
-	public void testDeleteEntrepriseById() {
-		l.info("Starting delete Entreprise test method");
+	public void testUpdateEntreprise() {
+		try {
+		Entreprise E = new Entreprise("Samsung","EURL");
+		E.setName("Iphone");
+		int Id = es.ajouterEntreprise(E);
+		assertNotNull(Id);
+		assertEquals("Iphone",E.getName());
+		es.deleteEntrepriseById(Id);
+		l.info("Update Entreprise works");
+		} catch (NullPointerException e) {
+			l.error(e.getMessage());
+		}
+	}
+	
+	//test % size of list 
+	@Test
+	public void testDeleteEntrepriseById_METHOD1() {
+		try {
 		Entreprise E = new Entreprise("Samsung","EURL");
 		int Id = es.ajouterEntreprise(E);
-		assertNotNull(es.getEntrepriseById(Id));
 		int lengthBeforeDelete = es.getAllEntreprises().size();
-		l.info("Entreprise with id " + Id + " exists" );
 		es.deleteEntrepriseById(Id);
 		assertEquals(lengthBeforeDelete-1 , es.getAllEntreprises().size());
-		l.info("Entreprise deleted successfuly");
+		l.info("Delete Entreprise (%size) works");
+		} catch (NullPointerException e) {
+			l.error(e.getMessage());
+		}
+	}
+	
+	//test % existence in DB
+	@Test
+	public void testDeleteEntrepriseById_METHOD2() {
+		try {
+			Entreprise E = new Entreprise("Samsung","EURL");
+			int Id = es.ajouterEntreprise(E);
+			boolean existsBeforeDelete = er.findById(Id).isPresent();
+			es.deleteEntrepriseById(Id);
+			boolean existsAfterDelete = er.findById(Id).isPresent();
+			assertTrue(existsBeforeDelete);
+			assertFalse(existsAfterDelete);
+			l.info("Delete Entreprise (%existence) works");
+			} catch (NullPointerException e) {
+				l.error(e.getMessage());
+			}
+	}
+	
+	@Test
+	public void testGetEntrepriseById(){
+		try {
+		Entreprise E = new Entreprise("Samsung","EURL");
+		int Id = es.ajouterEntreprise(E);
+		assertNotNull(Id);
+		es.deleteEntrepriseById(Id);
+		l.info("Get Entreprise by id works");
+		} catch (NullPointerException e) {
+			l.error(e.getMessage());
+		}
+	}
+	
+	@Test
+	public void testAffectDepartmentToEntreprise(){
+		try {
+		Entreprise E = new Entreprise("Samsung","EURL");
+		int IdE = es.ajouterEntreprise(E);
+		Departement D = new Departement("Info");
+		int IdD = es.ajouterDepartement(D);
+		assertNull(D.getEntreprise());
+		es.affecterDepartementAEntreprise(IdD, IdE);
+		assertNotNull(D.getEntreprise().getId());
+		assertEquals(D.getEntreprise().getId(),IdE);
+		es.deleteDepartementById(IdD);
+		es.deleteEntrepriseById(IdE);
+		l.info("Affect Department to Entreprise works");
+		} catch (NullPointerException e) {
+			l.error(e.getMessage());
+		}
+	}
+	
+	@Test
+	public void testgetAllDepartementsNamesByEntreprise(){
+		try {
+		Entreprise E = new Entreprise("Samsung","EURL");
+		int IdE = es.ajouterEntreprise(E);
+		Departement D = new Departement("Info");
+		int IdD = es.ajouterDepartement(D);
+		Departement D2 = new Departement("RH");
+		int IdD2 = es.ajouterDepartement(D2);
+		es.affecterDepartementAEntreprise(IdD2, IdE);
+		es.affecterDepartementAEntreprise(IdD, IdE);
+		List<String> ExpectedNames = new ArrayList<>();
+		ExpectedNames.add(D.getName());
+		ExpectedNames.add(D2.getName());
+		List<String> names = es.getAllDepartementsNamesByEntreprise(IdE);
+		assertEquals(ExpectedNames,names);
+		es.deleteDepartementById(IdD);
+		es.deleteDepartementById(IdD2);
+		es.deleteEntrepriseById(IdE);
+		l.info("Get Names of Departments by Entreprise works");
+		} catch (NullPointerException e) {
+			l.error(e.getMessage());
+		}
 	}
 	
 	
-	
-	//public Entreprise getEntrepriseById(int entrepriseId);
-	@Test
-	public void testGetEntrepriseById(){
-		l.info("Starting find Entreprise test method");
-		Entreprise E = new Entreprise("Samsung","EURL");
-		int Id = es.ajouterEntreprise(E);
-		assertNotNull(es.getEntrepriseById(Id));
-		l.info("Entreprise with id " + Id + " exists" );
-		Entreprise Ese = es.getEntrepriseById(Id);
-		assertNotNull(Ese);	
-		l.info("Entreprise with id " + Id + " was found successfuly : id(" + Ese.getId() 
-		+") , Name(" + Ese.getName() +") and Social Reason(" + Ese.getRaisonSocial() + ")" );
-		es.deleteEntrepriseById(Id);
-		}
 }
