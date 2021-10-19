@@ -40,10 +40,14 @@ public class TimesheetServiceImpl implements ITimesheetService {
 	}
     
 	public void affecterMissionADepartement(int missionId, int depId) {
+		boolean verifier = missionRepository.findById(missionId).isPresent();
+		boolean verifier1 = deptRepoistory.findById(missionId).isPresent();
+		if(verifier && verifier1){
 		Mission mission = missionRepository.findById(missionId).get();
 		Departement dep = deptRepoistory.findById(depId).get();
 		mission.setDepartement(dep);
 		missionRepository.save(mission);
+		}
 		
 	}
 
