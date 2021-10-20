@@ -12,6 +12,7 @@ import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,10 +52,11 @@ private static final Logger l = (Logger) LogManager.getLogger(EntrepriseServiceI
 	public void testUpdateEntreprise() {
 		try {
 		Entreprise E = new Entreprise("Samsung","EURL");
-		E.setName("Iphone");
 		int Id = es.ajouterEntreprise(E);
-		assertNotNull(Id);
-		assertEquals("Iphone",E.getName());
+		E.setName("Iphone");
+		es.ajouterEntreprise(E); 
+		Entreprise Ese = es.getEntrepriseById(Id);
+		assertEquals("Iphone",Ese.getName());
 		es.deleteEntrepriseById(Id);
 		l.info("Update Entreprise works");
 		} catch (NullPointerException e) {

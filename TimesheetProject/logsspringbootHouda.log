@@ -1107,3 +1107,8 @@ Caused by: java.lang.IllegalArgumentException: error Type referred to is not an 
 2021-10-19 15:49:18.622  INFO 11524 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2021-10-19 15:49:18.630  INFO 11524 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
 2021-10-19 15:49:18.889  INFO 11524 --- [http-nio-8081-exec-1] t.e.spring.aspects.TrackExecutionTime    : Method int tn.esprit.spring.services.EntrepriseServiceImpl.ajouterEntreprise(Entreprise) executed in : 109
+2021-10-19 15:55:49.743  INFO 11524 --- [RMI TCP Connection(13)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-10-19 15:55:49.745  INFO 11524 --- [RMI TCP Connection(13)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-10-19 15:55:49.747  INFO 11524 --- [RMI TCP Connection(13)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-10-19 15:55:49.750  INFO 11524 --- [RMI TCP Connection(13)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-10-19 15:55:49.754  INFO 11524 --- [RMI TCP Connection(13)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
