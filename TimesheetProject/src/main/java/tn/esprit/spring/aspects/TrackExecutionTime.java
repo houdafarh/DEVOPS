@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class TrackExecutionTime {
 
-	private static final Logger l = (Logger) LogManager.getLogger(TrackExecutionTime.class);
+	private static final Logger l = LogManager.getLogger(TrackExecutionTime.class);
 
 	
 	@Around("@annotation(tn.esprit.spring.aspects.TrackExecTime)")

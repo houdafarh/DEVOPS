@@ -27,7 +27,7 @@ import tn.esprit.spring.services.EntrepriseServiceImpl;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class EntrepriseServiceImplTest {
-private static final Logger l = (Logger) LogManager.getLogger(EntrepriseServiceImplTest.class);
+private static final Logger l = LogManager.getLogger(EntrepriseServiceImplTest.class);
 	
 	@Autowired
 	EntrepriseServiceImpl es;

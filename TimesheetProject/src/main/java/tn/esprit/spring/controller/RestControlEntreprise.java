@@ -14,9 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import tn.esprit.spring.entities.Departement;
 import tn.esprit.spring.entities.Entreprise;
-import tn.esprit.spring.services.IEmployeService;
 import tn.esprit.spring.services.IEntrepriseService;
-import tn.esprit.spring.services.ITimesheetService;
 
 @RestController
 public class RestControlEntreprise {
@@ -25,7 +23,6 @@ public class RestControlEntreprise {
 	IEntrepriseService ientrepriseservice;
 	
 	// http://localhost:8081/SpringMVC/servlet/ajouterEntreprise
-	//{"id":1,"name":"SSII Consulting","raisonSocial":"Cite El Ghazela"}
 
 	@PostMapping("/ajouterEntreprise")
 	@ResponseBody
@@ -57,7 +54,6 @@ public class RestControlEntreprise {
 	}
     
     // http://localhost:8081/SpringMVC/servlet/ajouterDepartement
- 	//{"id":1,"name":"Telecom"}
 
  	@PostMapping("/ajouterDepartement")
  	@ResponseBody
