@@ -1,7 +1,7 @@
 package tn.esprit.spring.services;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -39,28 +39,52 @@ public List<Mission> getAllMission(){
 	
 }
 public Mission getMissionById( int missionId) {
-	
-	Mission mission =missionRepository.findById(missionId).get();
-	return mission;
+	Mission missionManagedEntity = new Mission();
+
+	Optional<Mission> miss=missionRepository.findById(missionId);
+	if(miss.isPresent()) {
+		missionManagedEntity =miss.get();
+	}
+	return missionManagedEntity;
 }
 
 public void deleteMissionById(int missionId) {
-	Mission mission = missionRepository.findById(missionId).get();
-	missionRepository.delete(mission);
+	Mission missionManagedEntity = new Mission();
+
+	Optional<Mission> miss=missionRepository.findById(missionId);
+	if(miss.isPresent()) {
+		missionManagedEntity =miss.get();
+	}	
+	missionRepository.delete(missionManagedEntity);
 	}
 
 public void mettreAjourMissionName(String name ,int missionId  ) {
-	Mission mission = missionRepository.findById(missionId).get();
-	mission.setName(name);
-	missionRepository.save(mission);
+	Mission missionManagedEntity = new Mission();
+
+	Optional<Mission> miss=missionRepository.findById(missionId);
+	if(miss.isPresent()) {
+		missionManagedEntity =miss.get();
+	}	
+	missionManagedEntity.setName(name);
+	missionRepository.save(missionManagedEntity);
 }
 
 @Transactional 
 public void affecterMissionADepartement(int missionId, int depId) {
-	Mission mission = missionRepository.findById(missionId).get();
-	Departement dep = deptRepoistory.findById(depId).get();
-	mission.setDepartement(dep);
-	missionRepository.save(mission);
+	Mission missionManagedEntity = new Mission();
+	Departement depManagedEntity = new Departement();
+	Optional<Mission> miss=missionRepository.findById(missionId);
+	if(miss.isPresent()) {
+		missionManagedEntity =miss.get();
+	}			
+
+	Optional<Departement> dep=deptRepoistory.findById(depId);
+	if(dep.isPresent()) {
+		 depManagedEntity =dep.get();
+	}
+	
+	missionManagedEntity.setDepartement(depManagedEntity);
+	missionRepository.save(missionManagedEntity);
 	
 }
 public List<Mission> findAllMissionByEmployeJPQL(int employeId) {
