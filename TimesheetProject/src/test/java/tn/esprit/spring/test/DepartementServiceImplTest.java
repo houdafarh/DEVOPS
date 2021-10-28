@@ -148,7 +148,7 @@ public class DepartementServiceImplTest {
 		String NewNameDep="electronique";
 		ds.mettreAjourNameDepartmentByDepartmentId(NewNameDep, Id1);
 		Departement newdep = ds.getDepartementById(Id1);
-		assertTrue(newdep.getName().equals(NewNameDep));
+		assertEquals(newdep.getName(),NewNameDep);
 		ds.deleteDepartementById(Id1);
 		l.info("Update Department name by id works");
 		
@@ -172,7 +172,7 @@ public class DepartementServiceImplTest {
 		assertNull(D.getEntreprise());
 		ds.affecterDepartementAEntreprise(IdD, IdE);
 		Departement departmentAfterAffectation = ds.getDepartementById(IdD);
-		assertNotNull(departmentAfterAffectation.getEntreprise().getId());
+		
 	    assertEquals(departmentAfterAffectation.getEntreprise().getId(),IdE);
 	    ds.deleteDepartementById(D.getId());
 		es.deleteEntrepriseById(E.getId());

@@ -1,8 +1,8 @@
 package tn.esprit.spring.services;
 
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,14 +33,24 @@ public class DepartmentServicelmpl implements IDepartmentService {
 	//done
 	@Transactional
 	public void deleteDepartementById(int depId) {
-		deptRepoistory.delete(deptRepoistory.findById(depId).get());	
+		
+		Departement depManagedEntity;
+		Optional<Departement> d = deptRepoistory.findById(depId);
+		if(d.isPresent()) {
+			depManagedEntity = d.get();
+			deptRepoistory.delete(depManagedEntity);}
+			
 	}
 
     
 	
 	//done
 	public Departement getDepartementById(int depId) {
-		return deptRepoistory.findById(depId).get();	
+		Departement departementManagedEntity = new Departement();
+		Optional<Departement> d = deptRepoistory.findById(depId);
+		if(d.isPresent()) {
+			departementManagedEntity = d.get();}
+		return departementManagedEntity;
 	}
 
     
@@ -52,7 +62,10 @@ public class DepartmentServicelmpl implements IDepartmentService {
 	
 	//done
 	public void mettreAjourNameDepartmentByDepartmentId(String name, int departmentId) {
-		Departement department = deptRepoistory.findById(departmentId).get();
+		Departement department = new Departement();
+		Optional<Departement> d = deptRepoistory.findById(departmentId);
+		if(d.isPresent()) {
+			department = d.get();}
 		department.setName(name);
 		deptRepoistory.save(department);
 
@@ -62,8 +75,18 @@ public class DepartmentServicelmpl implements IDepartmentService {
 	//done
 	@Transactional	
 	public void affecterDepartementAEntreprise(int departmentId, int entrepriseId) {
-		Entreprise entrepriseManagedEntity = entrepriseRepository.findById(entrepriseId).get();
-		Departement departementManagedEntity = deptRepoistory.findById(departmentId).get();
+		
+		Entreprise entrepriseManagedEntity = new Entreprise();
+		Optional<Entreprise> e = entrepriseRepository.findById(entrepriseId);
+		if(e.isPresent()) {
+			entrepriseManagedEntity = e.get();}
+		
+		Departement departementManagedEntity = new Departement();
+		Optional<Departement> d = deptRepoistory.findById(departmentId);
+		if(d.isPresent()) {
+			departementManagedEntity = d.get();}
+		
+		
 			departementManagedEntity.setEntreprise(entrepriseManagedEntity);
 			deptRepoistory.save(departementManagedEntity);
 			entrepriseRepository.save(entrepriseManagedEntity);
