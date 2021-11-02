@@ -19,7 +19,7 @@ public class TrackExecutionTime {
 		long stratTime=System.currentTimeMillis();
 		Object obj=pjp.proceed();
 		long endTime=System.currentTimeMillis();
-		l.info("Method "+pjp.getSignature()+" executed in : "+(endTime-stratTime));
+		l.info("Method %s exectued in %d" , pjp.getSignature() , (endTime-stratTime));
 		return obj;
 	}
 	

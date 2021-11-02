@@ -12,7 +12,6 @@ import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +39,7 @@ private static final Logger l = LogManager.getLogger(EntrepriseServiceImplTest.c
 		try {
 		Entreprise E = new Entreprise("Samsung","EURL");
 		int Id = es.ajouterEntreprise(E);
-		assertNotNull(Id);
+		assertEquals(Id, E.getId());
 		es.deleteEntrepriseById(Id);
 		l.info("Add Entreprise works");
 		} catch (NullPointerException e) {
@@ -101,7 +100,7 @@ private static final Logger l = LogManager.getLogger(EntrepriseServiceImplTest.c
 		try {
 		Entreprise E = new Entreprise("Samsung","EURL");
 		int Id = es.ajouterEntreprise(E);
-		assertNotNull(Id);
+		assertEquals(Id, E.getId());
 		es.deleteEntrepriseById(Id);
 		l.info("Get Entreprise by id works");
 		} catch (NullPointerException e) {
@@ -118,7 +117,6 @@ private static final Logger l = LogManager.getLogger(EntrepriseServiceImplTest.c
 		int IdD = es.ajouterDepartement(D);
 		assertNull(D.getEntreprise());
 		es.affecterDepartementAEntreprise(IdD, IdE);
-		assertNotNull(D.getEntreprise().getId());
 		assertEquals(D.getEntreprise().getId(),IdE);
 		es.deleteDepartementById(IdD);
 		es.deleteEntrepriseById(IdE);

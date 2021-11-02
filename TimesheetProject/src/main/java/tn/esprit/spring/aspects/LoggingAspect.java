@@ -20,8 +20,8 @@ public class LoggingAspect {
 	Object obj = pjp.proceed();
 	long elapsedTime = System.currentTimeMillis() - start;
 	if (elapsedTime > 3000) {
-	l.info("METHOD " + pjp.getSignature()  + " TOOK LONGER THAN 3 SECONDS , Method execution time: " + elapsedTime + " milliseconds.");
-	}
+	l.info("METHOD %s TOOK LONGER THAN 3 SECONDS , Method execution time: %d milliseconds."
+	, pjp.getSignature() , elapsedTime); }
 	return obj;
 	}
 }
