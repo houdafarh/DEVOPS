@@ -15,14 +15,9 @@
 	<packaging>war</packaging>
 	<name>Timesheet-spring-boot-core-data-jpa-mvc-REST-1</name>
 	<description>Timesheet-spring-boot-core-data-jpa-mvc-REST-1</description>
-	<!--  add the directory mentioned in settings.xml of maven 
-	<distributionManagement>
-		<repository>
-			<id>deploymentRepo</id>
-			<url>http://localhost:8081/repository/maven-releases/</url>
-		</repository>
-	</distributionManagement>
-	-->
+	<!-- add the directory mentioned in settings.xml of maven <distributionManagement> 
+		<repository> <id>deploymentRepo</id> <url>http://localhost:8081/repository/maven-releases/</url> 
+		</repository> </distributionManagement> -->
 	<properties>
 		<jacoco.version>0.8.6</jacoco.version>
 		<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
@@ -75,7 +70,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-						<plugin>
+			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>${jacoco.version}</version>
@@ -95,36 +90,14 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!-- deactivate maven deploy plugin then change it to nexus 
-			<plugin>
-				<artifactId>maven-deploy-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>default-deploy</id>
-						<phase>deploy</phase>
-						<goals>
-							<goal>deploy</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.sonatype.plugins</groupId>
-				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>1.5.1</version>
-				<executions>
-					<execution>
-						<id>default-deploy</id>
-						<phase>deploy</phase>
-						<goals>
-							<goal>deploy</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-                    <skipNexusStagingDeployMojo>true</skipNexusStagingDeployMojo>
-				</configuration>
-			</plugin> -->
+			<!-- deactivate maven deploy plugin then change it to nexus <plugin> <artifactId>maven-deploy-plugin</artifactId> 
+				<executions> <execution> <id>default-deploy</id> <phase>deploy</phase> <goals> 
+				<goal>deploy</goal> </goals> </execution> </executions> </plugin> <plugin> 
+				<groupId>org.sonatype.plugins</groupId> <artifactId>nexus-staging-maven-plugin</artifactId> 
+				<version>1.5.1</version> <executions> <execution> <id>default-deploy</id> 
+				<phase>deploy</phase> <goals> <goal>deploy</goal> </goals> </execution> </executions> 
+				<configuration> <skipNexusStagingDeployMojo>true</skipNexusStagingDeployMojo> 
+				</configuration> </plugin> -->
 		</plugins>
 	</build>
 </project>
