@@ -10,9 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-
-
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -36,13 +33,12 @@ public class RestControlEmploye {
 	@Autowired
 	ITimesheetService itimesheetservice;
 
-	
-	// http://localhost:8081/SpringMVC/servlet/ajouterEmployer
 
 	@PostMapping("/ajouterEmployer")
 	@ResponseBody
-	public Employe ajouterEmploye(@RequestBody Employe employe)
+	public Employe ajouterEmploye()
 	{
+		Employe employe = new Employe();
 		iemployeservice.ajouterEmploye(employe);
 		return employe;
 	}
@@ -71,7 +67,8 @@ public class RestControlEmploye {
 	// http://localhost:8081/SpringMVC/servlet/ajouterContrat
 	@PostMapping("/ajouterContrat")
 	@ResponseBody
-	public int ajouterContrat(@RequestBody Contrat contrat) {
+	public int ajouterContrat() {
+		Contrat contrat = new Contrat();
 		iemployeservice.ajouterContrat(contrat);
 		return contrat.getReference();
 	}
