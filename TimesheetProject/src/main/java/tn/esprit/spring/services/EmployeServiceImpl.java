@@ -52,6 +52,7 @@ public class EmployeServiceImpl implements IEmployeService {
 	@Transactional	
 	public void affecterEmployeADepartement(int employeId, int depId) {
 
+
 		Departement depManagedEntity = new Departement();
 		Employe employeManagedEntity = new Employe();
 
@@ -64,6 +65,7 @@ public class EmployeServiceImpl implements IEmployeService {
 		if(emp.isPresent()) {
 			employeManagedEntity =emp.get();
 		}
+
 
 
 		if(depManagedEntity.getEmployes() == null){
@@ -148,7 +150,6 @@ public class EmployeServiceImpl implements IEmployeService {
 		contratManagedEntity = e.get();}
 
 		contratRepoistory.delete(contratManagedEntity);
-
 	}
 
 	public int getNombreEmployeJPQL() {

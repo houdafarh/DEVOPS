@@ -64,6 +64,14 @@
 </dependency>
 	</dependencies>
 
+	<distributionManagement>
+		<snapshotRepository>
+			<id>deploymentRepo</id>
+			<name>releases</name>
+			<url>http://localhost:8081/repository/maven-releases/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -71,6 +79,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
+
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>${jacoco.version}</version>
@@ -98,6 +107,16 @@
 				<phase>deploy</phase> <goals> <goal>deploy</goal> </goals> </execution> </executions> 
 				<configuration> <skipNexusStagingDeployMojo>true</skipNexusStagingDeployMojo> 
 				</configuration> </plugin> -->
+        <plugin>
+		<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.8</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>nexus</serverId>
+					<nexusUrl>http://localhost:8081/nexus/</nexusUrl>
+				</configuration>
+			</plugin>
 
 		</plugins>
 	</build>
