@@ -16,6 +16,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import tn.esprit.spring.entities.Departement;
 import tn.esprit.spring.entities.Mission;
+import tn.esprit.spring.services.DepartmentServicelmpl;
 import tn.esprit.spring.services.MissionServiceImpl;
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -24,6 +25,9 @@ public class MissionServiceImplTest {
 	
 	@Autowired
 	MissionServiceImpl missionservice;
+	@Autowired
+	DepartmentServicelmpl ds;
+	
 	
 	
 	@Test
@@ -85,6 +89,7 @@ public void testAffecterMissionADepartement() {
     else {
     dep.getMissions().add(miss);
     assertNotNull(dep);
+    ds.deleteDepartementById(dep.getId());
     l.debug("good " +dep.getEmployes());
     }
 }
