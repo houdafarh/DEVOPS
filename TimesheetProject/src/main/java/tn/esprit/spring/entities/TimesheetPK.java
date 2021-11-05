@@ -75,6 +75,7 @@ public class TimesheetPK implements Serializable {
 		return idMission != other.idMission;
 	return true;
 }
+
 	
 	public void setIdMission(int idMission) {
 		this.idMission = idMission;
