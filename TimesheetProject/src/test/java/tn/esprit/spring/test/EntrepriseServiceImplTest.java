@@ -148,7 +148,5 @@ private static final Logger l = LogManager.getLogger(EntrepriseServiceImplTest.c
 		} catch (NullPointerException e) {
 			l.error(e.getMessage());
 		}
-	}
-	
-	
+	}	
 }
