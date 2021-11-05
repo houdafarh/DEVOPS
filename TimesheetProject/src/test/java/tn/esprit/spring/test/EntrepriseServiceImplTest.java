@@ -107,7 +107,7 @@ private static final Logger l = LogManager.getLogger(EntrepriseServiceImplTest.c
 		}
 	}
 	
-	@Test
+	/*@Test
 	public void testAffectDepartmentToEntreprise(){
 		try {
 		Entreprise E = new Entreprise("Samsung","EURL");
@@ -123,7 +123,7 @@ private static final Logger l = LogManager.getLogger(EntrepriseServiceImplTest.c
 		} catch (NullPointerException e) {
 			l.error(e.getMessage());
 		}
-	}
+	}*/
 	
 	@Test
 	public void testgetAllDepartementsNamesByEntreprise(){
