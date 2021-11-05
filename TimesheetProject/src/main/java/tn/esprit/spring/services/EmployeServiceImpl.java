@@ -134,13 +134,12 @@ public class EmployeServiceImpl implements IEmployeService {
 		//Desaffecter l'employe de tous les departements
 		//c'est le bout master qui permet de mettre a jour
 		//la table d'association
-		for(Departement dep : employeManagedEntity.getDepartements()){
-			dep.getEmployes().remove(employeManagedEntity);
+		for(Departement dep : employe.getDepartements()){
+			dep.getEmployes().remove(employe);
 		}
 
-		employeRepository.delete(employeManagedEntity);
+		employeRepository.delete(employe);
 	}
-
 	public void deleteContratById(int contratId) {
 		Contrat contratManagedEntity = new Contrat();
 		Optional<Contrat> e = contratRepoistory.findById(contratId);
