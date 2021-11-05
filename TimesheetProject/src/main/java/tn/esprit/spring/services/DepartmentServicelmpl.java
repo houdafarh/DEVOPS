@@ -89,7 +89,7 @@ public class DepartmentServicelmpl implements IDepartmentService {
 		
 			departementManagedEntity.setEntreprise(entrepriseManagedEntity);
 			deptRepoistory.save(departementManagedEntity);
-			entrepriseRepository.save(entrepriseManagedEntity);
+			
 			
 		
 
