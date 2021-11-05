@@ -55,6 +55,7 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 
 				depManagedEntity.setEntreprise(entrepriseManagedEntity);
 				deptRepoistory.save(depManagedEntity);
+				
 
 		
 	}
