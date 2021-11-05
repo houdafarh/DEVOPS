@@ -17,6 +17,7 @@ import tn.esprit.spring.entities.Mission;
 import tn.esprit.spring.services.IEmployeService;
 import tn.esprit.spring.services.IEntrepriseService;
 import tn.esprit.spring.services.ITimesheetService;
+import tn.esprit.spring.services.MissionService;
 
 @RestController
 public class RestControlTimesheet {
@@ -27,19 +28,21 @@ public class RestControlTimesheet {
 	IEntrepriseService ientrepriseservice;
 	@Autowired
 	ITimesheetService itimesheetservice;
+	@Autowired 
+	MissionService missionService ; 
 	
 	// http://localhost:8081/SpringMVC/servlet/ajouterMission
 	@PostMapping("/ajouterMission")
 	@ResponseBody
 	public int ajouterMission(@RequestBody Mission mission) {
-		itimesheetservice.ajouterMission(mission);
+		missionService.addMission(mission);
 		return mission.getId();
 	}
 
 	// http://localhost:8081/SpringMVC/servlet/affecterMissionADepartement/4/4
 	@PutMapping(value = "/affecterMissionADepartement/{idmission}/{iddept}") 
 	public void affecterMissionADepartement(@PathVariable("idmission") int missionId, @PathVariable("iddept") int depId) {
-		itimesheetservice.affecterMissionADepartement(missionId, depId);
+		missionService.affecterMissionADepartement(missionId, depId);
 
 	}
 	
@@ -64,7 +67,7 @@ public class RestControlTimesheet {
     @ResponseBody
 	public List<Mission> findAllMissionByEmployeJPQL(@PathVariable("idemp") int employeId) {
 
-		return itimesheetservice.findAllMissionByEmployeJPQL(employeId);
+		return missionService.findAllMissionByEmployeJPQL(employeId);
 	}
 
     // URL : http://localhost:8081/SpringMVC/servlet/getAllEmployeByMission/1
@@ -72,6 +75,6 @@ public class RestControlTimesheet {
     @ResponseBody
 	public List<Employe> getAllEmployeByMission(@PathVariable("idmission") int missionId) {
 
-		return itimesheetservice.getAllEmployeByMission(missionId);
+		return missionService.getAllEmployeByMission(missionId);
 	}
 }

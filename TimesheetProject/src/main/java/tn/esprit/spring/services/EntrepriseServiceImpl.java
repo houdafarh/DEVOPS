@@ -24,6 +24,9 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 	
 	@TrackExecTime
 	public int ajouterEntreprise(Entreprise entreprise) {
+
+
+		
 		entrepriseRepoistory.save(entreprise);
 		return entreprise.getId();
 	}
@@ -38,6 +41,7 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 				//donc il faut rajouter l'entreprise a departement 
 				// ==> c'est l'objet departement(le master) qui va mettre a jour l'association
 				//Rappel : la classe qui contient mappedBy represente le bout Slave
+
 				//Rappel : Dans une relation oneToMany le mappedBy doit etre du cote one. 
 				Entreprise entrepriseManagedEntity = new Entreprise();
 				Optional<Entreprise> e = entrepriseRepoistory.findById(entrepriseId);
@@ -47,6 +51,7 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 				Optional<Departement> d = deptRepoistory.findById(depId);
 				if(d.isPresent()) {
 				depManagedEntity = d.get();}				
+
 				depManagedEntity.setEntreprise(entrepriseManagedEntity);
 				deptRepoistory.save(depManagedEntity);
 		
@@ -58,6 +63,7 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 		if(e.isPresent()) {
 		entrepriseManagedEntity = e.get();}
 		List<String> depNames = new ArrayList<>();
+
 		for(Departement dep : entrepriseManagedEntity.getDepartements()){
 			depNames.add(dep.getName());
 		}
@@ -70,6 +76,7 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 		Optional<Entreprise> e = entrepriseRepoistory.findById(entrepriseId);
 		if(e.isPresent()) {
 		entrepriseManagedEntity = e.get();}
+
 		entrepriseRepoistory.delete(entrepriseManagedEntity);	
 	}
 
@@ -79,6 +86,7 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 		Optional<Departement> d = deptRepoistory.findById(depId);
 		if(d.isPresent()) {
 		depManagedEntity = d.get();}	
+
 		deptRepoistory.delete(depManagedEntity);	
 	}
 
@@ -89,6 +97,7 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 		if(e.isPresent()) {
 		entrepriseManagedEntity = e.get();}
 		return entrepriseManagedEntity;
+
 	}
 
 	public List<Entreprise> getAllEntreprises(){

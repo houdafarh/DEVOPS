@@ -22,7 +22,8 @@ public class RestControlEntreprise {
 	@Autowired
 	IEntrepriseService ientrepriseservice;
 	
-	// http://localhost:8081/SpringMVC/servlet/ajouterEntreprise
+
+	// Ajouter Entreprise : http://localhost:8081/SpringMVC/servlet/ajouterEntreprise
 
 	@PostMapping("/ajouterEntreprise")
 	@ResponseBody

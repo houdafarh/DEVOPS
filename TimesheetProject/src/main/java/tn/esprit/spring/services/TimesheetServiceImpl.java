@@ -2,7 +2,6 @@ package tn.esprit.spring.services;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 import java.util.Optional;
 
 import org.apache.logging.log4j.LogManager;
@@ -36,24 +35,9 @@ public class TimesheetServiceImpl implements ITimesheetService {
 	@Autowired
 	EmployeRepository employeRepository;
 	
-	public int ajouterMission(Mission mission) {
-		missionRepository.save(mission);
-		return mission.getId();
-	}
     
-	public void affecterMissionADepartement(int missionId, int depId) {
-		Mission mission = new Mission();
-		Optional<Mission> m = missionRepository.findById(missionId);
-		if(m.isPresent()) {
-		mission = m.get();}
-		Departement dep = new Departement();
-		Optional<Departement> d = deptRepoistory.findById(depId);
-		if(d.isPresent()) {
-		dep = d.get();}		
-		mission.setDepartement(dep);
-		missionRepository.save(mission);
-		
-	}
+
+
 
 	public void ajouterTimesheet(int missionId, int employeId, Date dateDebut, Date dateFin) {
 		TimesheetPK timesheetPK = new TimesheetPK();
@@ -73,16 +57,21 @@ public class TimesheetServiceImpl implements ITimesheetService {
 	public void validerTimesheet(int missionId, int employeId, Date dateDebut, Date dateFin, int validateurId) {
 		l.info("In valider Timesheet");
 		Employe validateur = new Employe();
-		Optional<Employe> e = employeRepository.findById(validateurId);
-		if(e.isPresent()) {
-		validateur = e.get();}
+
+
+		Optional<Employe> emp=employeRepository.findById(employeId);
+		if(emp.isPresent()) {
+			validateur =emp.get();
+		}
 		Mission mission = new Mission();
-		Optional<Mission> m = missionRepository.findById(missionId);
-		if(m.isPresent()) {
-		mission = m.get();}
-		//verifier s'il est un chef de departement (interet des enum)
+
+		Optional<Mission> miss=missionRepository.findById(missionId);
+		if(miss.isPresent()) {
+			mission =miss.get();
+		}		//verifier s'il est un chef de departement (interet des enum)
 		if(!validateur.getRole().equals(Role.CHEF_DEPARTEMENT)){
 			l.info("l'employe doit etre chef de departement pour valider une feuille de temps !");
+		
 			return;
 		}
 		//verifier s'il est le chef de departement de la mission en question
@@ -95,6 +84,7 @@ public class TimesheetServiceImpl implements ITimesheetService {
 		}
 		if(!chefDeLaMission){
 			l.info("l'employe doit etre chef de departement de la mission en question");
+
 			return;
 		}
 //
@@ -104,18 +94,14 @@ public class TimesheetServiceImpl implements ITimesheetService {
 		
 		//Comment Lire une date de la base de données
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-		String ch = dateFormat.format(timesheet.getTimesheetPK().getDateDebut());
-		l.info("dateDebut : %s" , ch );
+
+		l.info("dateDebut : " + dateFormat.format(timesheet.getTimesheetPK().getDateDebut()));
+
+		
 	}
 
 	
-	public List<Mission> findAllMissionByEmployeJPQL(int employeId) {
-		return timesheetRepository.findAllMissionByEmployeJPQL(employeId);
-	}
-
 	
-	public List<Employe> getAllEmployeByMission(int missionId) {
-		return timesheetRepository.getAllEmployeByMission(missionId);
-	}
+
 
 }

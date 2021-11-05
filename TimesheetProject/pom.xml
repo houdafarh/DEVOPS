@@ -61,7 +61,7 @@
 			<groupId>org.jacoco</groupId>
 			<artifactId>jacoco-maven-plugin</artifactId>
 			<version>0.8.7</version>
-		</dependency>
+</dependency>
 	</dependencies>
 
 	<build>
@@ -98,6 +98,7 @@
 				<phase>deploy</phase> <goals> <goal>deploy</goal> </goals> </execution> </executions> 
 				<configuration> <skipNexusStagingDeployMojo>true</skipNexusStagingDeployMojo> 
 				</configuration> </plugin> -->
+
 		</plugins>
 	</build>
 </project>
