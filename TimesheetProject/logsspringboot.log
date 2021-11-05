@@ -212,3 +212,87 @@ Verify the connector's configuration, identify and stop any process that's liste
 2021-11-05 22:38:26.343  INFO 940 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2021-11-05 22:38:26.348  INFO 940 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2021-11-05 22:38:26.370  INFO 940 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-05 23:12:06.226  INFO 6404 --- [main] SpringBootCoreDataJpaMvcRest1Application : Starting TimesheetSpringBootCoreDataJpaMvcRest1Application on DESKTOP-V5KVK0F with PID 6404 (C:\Users\Mahahi\Documents\GitHub\DEVOPS\TimesheetProject\target\classes started by Mahahi in C:\Users\Mahahi\Documents\GitHub\DEVOPS\TimesheetProject)
+2021-11-05 23:12:06.232  INFO 6404 --- [main] SpringBootCoreDataJpaMvcRest1Application : No active profile set, falling back to default profiles: default
+2021-11-05 23:12:07.492  INFO 6404 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2021-11-05 23:12:07.707  INFO 6404 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 195ms. Found 6 repository interfaces.
+2021-11-05 23:12:08.512  INFO 6404 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2e69a0c0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-05 23:12:09.532  INFO 6404 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
+2021-11-05 23:12:09.574  INFO 6404 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-05 23:12:09.575  INFO 6404 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2021-11-05 23:12:09.828  INFO 6404 --- [main] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-11-05 23:12:09.829  INFO 6404 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3510 ms
+2021-11-05 23:12:10.187  INFO 6404 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-05 23:12:10.493  INFO 6404 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-05 23:12:10.615  INFO 6404 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2021-11-05 23:12:10.772  INFO 6404 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2021-11-05 23:12:10.776  INFO 6404 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2021-11-05 23:12:11.164  INFO 6404 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2021-11-05 23:12:11.520  INFO 6404 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-11-05 23:12:13.697  INFO 6404 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-05 23:12:14.383  INFO 6404 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2021-11-05 23:12:15.663  INFO 6404 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-11-05 23:12:15.751  WARN 6404 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-05 23:12:16.308  INFO 6404 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path '/SpringMVC'
+2021-11-05 23:12:16.322  INFO 6404 --- [main] SpringBootCoreDataJpaMvcRest1Application : Started TimesheetSpringBootCoreDataJpaMvcRest1Application in 10.818 seconds (JVM running for 11.982)
+2021-11-05 23:24:38.821  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : Starting DepartementServiceImplTest on DESKTOP-V5KVK0F with PID 10468 (started by Mahahi in C:\Users\Mahahi\Documents\GitHub\DEVOPS\TimesheetProject)
+2021-11-05 23:24:38.823  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : No active profile set, falling back to default profiles: default
+2021-11-05 23:24:40.935  INFO 10468 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2021-11-05 23:24:41.165  INFO 10468 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 213ms. Found 6 repository interfaces.
+2021-11-05 23:24:42.234  INFO 10468 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$75782c8e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-05 23:24:42.879  INFO 10468 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-05 23:24:43.240  INFO 10468 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-05 23:24:43.499  INFO 10468 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2021-11-05 23:24:43.658  INFO 10468 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2021-11-05 23:24:43.662  INFO 10468 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2021-11-05 23:24:44.344  INFO 10468 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2021-11-05 23:24:44.981  INFO 10468 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-11-05 23:24:47.298  INFO 10468 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-05 23:24:48.221  INFO 10468 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2021-11-05 23:24:51.099  INFO 10468 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-11-05 23:24:51.269  WARN 10468 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-05 23:24:52.736  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : Started DepartementServiceImplTest in 14.791 seconds (JVM running for 16.476)
+2021-11-05 23:24:53.442  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : End add Department test method
+2021-11-05 23:24:53.453  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : Starting get all departements
+2021-11-05 23:24:53.470  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : Departement with id 533 added
+2021-11-05 23:24:53.511  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : Departement with id 534 added
+2021-11-05 23:24:53.522  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : Departement with id 535 added
+2021-11-05 23:24:53.522  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : lenght of departement list: 3
+2021-11-05 23:24:53.593  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : Get All Department  works
+2021-11-05 23:24:53.601  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : Starting delete Department test method
+2021-11-05 23:24:53.608  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : Adding new Department with id : 536
+2021-11-05 23:24:53.623  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : Department with id 536 exists
+2021-11-05 23:24:53.640  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : Department deleted successfuly
+2021-11-05 23:24:53.685  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : Entreprise with id 96 added
+2021-11-05 23:24:53.706  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : Departement with id 537 added
+2021-11-05 23:24:53.817  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : Affect Department to Entreprise works
+2021-11-05 23:24:53.863  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : Desaffect Department to Entreprise works
+2021-11-05 23:24:53.892  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : Departement with id 538 added
+2021-11-05 23:24:53.913  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : Departement with id 539 added
+2021-11-05 23:24:54.052  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : Get  Department Number works
+2021-11-05 23:24:54.070  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : Departement with id 540 added
+2021-11-05 23:24:54.108  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : Update Department name by id works
+2021-11-05 23:24:54.115  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : Starting find Departement test method
+2021-11-05 23:24:54.131  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : Departement with id 541 added
+2021-11-05 23:24:54.140  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : Departement with id 541 found successfully
+2021-11-05 23:24:54.179  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : End Update Department test method
+2021-11-05 23:24:54.194  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : Entreprise with id 97 added
+2021-11-05 23:24:54.208  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : Departement with id 543 added
+2021-11-05 23:24:54.253  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : Affect Department to Entreprise works
+2021-11-05 23:24:54.273  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : Entreprise with id 98 added
+2021-11-05 23:24:54.282  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : Departement with id 544 added
+2021-11-05 23:24:54.292  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : Departement with id 545 added
+2021-11-05 23:24:54.577  INFO 10468 --- [main] t.e.s.test.DepartementServiceImplTest    : Get All Department By Entreprise works
+2021-11-05 23:24:54.606  INFO 10468 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-11-05 23:24:54.625  INFO 10468 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-05 23:24:54.634  INFO 10468 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-05 23:24:54.665  INFO 10468 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-05 23:27:26.772  INFO 6404 --- [RMI TCP Connection(19)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-11-05 23:27:26.776  INFO 6404 --- [RMI TCP Connection(19)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-11-05 23:27:26.780  INFO 6404 --- [RMI TCP Connection(19)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-05 23:27:26.784  INFO 6404 --- [RMI TCP Connection(19)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-05 23:27:26.794  INFO 6404 --- [RMI TCP Connection(19)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
