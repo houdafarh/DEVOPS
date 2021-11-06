@@ -39,7 +39,11 @@ bat "mvn deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=Timesheet-sp
 }
     
     post {
-        always {
+        success {
     emailext attachLog: true, body: '''End of Pipeline
-Finished: SUCCESS''', subject: '#Success', to: 'mayssa.assyam98@gmail.com'} } 
+Finished: SUCCESS''', subject: '#Success', to: 'mayssa.assyam98@gmail.com'}
+    failure - Any {
+    emailext attachLog: true, body: '''End of Pipeline
+Finished: FAILURE''', subject: '#Failure', to: 'mayssa.assyam98@gmail.com'}
+    } 
 }
