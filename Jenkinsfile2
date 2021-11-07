@@ -23,4 +23,4 @@ bat "mvn clean package"}
 }}
 }
 }
-}
+
