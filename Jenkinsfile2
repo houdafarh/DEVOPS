@@ -1,4 +1,8 @@
 pipeline {
+   environment {
+registry = "houdafarh/timesheet"
+registryCredential = 'DockerCredentials'
+dockerImage = '' }
     agent any
 stages {
 stage("Cloning Project from Git") {
@@ -22,5 +26,13 @@ dir("TimesheetProject"){
 bat "mvn clean package"}
 }}
 }
+stage('Docker : Build image') {
+steps {
+script {
+dockerImage = docker.build registry}}}
+stage('Docker : Push image') {
+steps {
+script {
+docker.withRegistry( '', registryCredential ) {
+dockerImage.push()}}}}
 }
-
