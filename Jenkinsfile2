@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+stages {
+stage("Cloning Project from Git") {
+steps { 
+git branch: 'Houd', credentialsId: 'GitCredentials', url: 'https://github.com/houdafarh/DEVOPS.git'
+}
+}
+stage("Build") {
+steps {
+dir("TimesheetProject"){
+bat "mvn compile"}
+}}
+stage("Unit tests") {
+steps {
+dir("TimesheetProject"){
+bat "mvn test"}
+}}
+stage("Clean- Package"){
+steps {
+dir("TimesheetProject"){
+bat "mvn clean package"}
+}}
+}
+}
+}
