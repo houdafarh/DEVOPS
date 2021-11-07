@@ -322,3 +322,5 @@ Verify the connector's configuration, identify and stop any process that's liste
 2021-11-07 08:39:17.512  INFO 17060 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path '/SpringMVC'
 2021-11-07 08:39:17.514  INFO 17060 --- [main] SpringBootCoreDataJpaMvcRest1Application : Started TimesheetSpringBootCoreDataJpaMvcRest1Application in 7.171 seconds (JVM running for 8.379)
 2021-11-07 10:09:19.451  WARN 17060 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=51m34s800ms445µs900ns).
+2021-11-07 13:08:44.622  WARN 17060 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=55m53s93ms720µs600ns).
+2021-11-07 14:00:41.121  WARN 17060 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=28m56s86ms190µs200ns).
