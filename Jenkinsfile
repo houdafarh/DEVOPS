@@ -3,7 +3,7 @@ pipeline {
 stages {
 stage("Cloning Project from Git") {
 steps { 
-git branch: 'Houd', credentialsId: 'GitCredentials', url: 'https://github.com/houdafarh/DEVOPS.git'
+git branch: 'Houda', credentialsId: 'GitCredentials', url: 'https://github.com/houdafarh/DEVOPS.git'
 }
 }
 stage("Build") {
