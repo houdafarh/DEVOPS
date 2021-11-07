@@ -3,7 +3,7 @@ pipeline {
 stages {
 stage("Cloning Project from Git") {
 steps { 
-git branch: 'Houd', credentialsId: 'GitCredentials', url: 'https://github.com/houdafarh/DEVOPS.git'
+git branch: 'Houda', credentialsId: 'GitCredentials', url: 'https://github.com/houdafarh/DEVOPS.git'
 }
 }
 stage("Build") {
@@ -37,9 +37,9 @@ bat "mvn deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=Timesheet-sp
 }}
 }
 }
-            post {
-    failure {
-        emailext attachLog: true, body: '''There was an error that prevented a Build Success ! 
+post {
+failure {
+emailext attachLog: true, body: '''There was an error that prevented a Build Success ! 
 Do check the attached log or the console output for further details. 
 
 Jenkins Team ''', subject: 'Build Failure on Pipeline', to: 'houda.farh1@esprit.tn'
