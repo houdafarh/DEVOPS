@@ -39,7 +39,7 @@ bat "mvn deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=Timesheet-sp
 }
             post {
     failure {
-        emailext body: '''There was an error that prevented a Build Success ! 
+        emailext attachLog: true, body: '''There was an error that prevented a Build Success ! 
 Do check the attached log or the console output for further details. 
 
 Jenkins Team ''', subject: 'Build Failure on Pipeline', to: 'houda.farh1@esprit.tn'
