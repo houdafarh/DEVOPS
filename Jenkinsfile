@@ -42,7 +42,7 @@ failure {
 emailext attachLog: true, body: '''There was an error that prevented a Build Success ! 
 Do check the attached log or the console output for further details. 
 
-Jenkins Team ''', subject: 'Build Failure on Pipeline' , to: "${$DEFAULT_RECIPIENTS}"
+Jenkins Team ''', subject: 'Build Failure on Pipeline' , to: "${DEFAULT_RECIPIENTS}"
     }
 }
 }
