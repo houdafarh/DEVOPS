@@ -25,7 +25,6 @@ steps {
 dir("TimesheetProject"){
 bat "mvn clean package"}
 }}
-}
 stage('Docker : Build image') {
 steps {
 script {
@@ -35,4 +34,5 @@ steps {
 script {
 docker.withRegistry( '', registryCredential ) {
 dockerImage.push()}}}}
+}
 }
