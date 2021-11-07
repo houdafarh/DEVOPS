@@ -1,6 +1,6 @@
 pipeline {
    environment {
-registry = "houdafarh/timesheetP"
+registry = "houdafarh/timesheetp"
 registryCredential = 'DockerCredentials'
 dockerImage = '' }
     agent any
