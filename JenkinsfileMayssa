@@ -1,6 +1,6 @@
 pipeline {
     environment {
-registry = "230619981123/timesheet"
+registry = "230619981123/timesheet1"
 registryCredential = 'dockerHub'
 dockerImage = '' }
     agent any
