@@ -7,7 +7,7 @@ dockerImage = '' }
 stages {
 stage("Cloning Project from Git") {
 steps { 
-git branch: 'main', credentialsId: 'GitCredentials', url: 'https://github.com/houdafarh/DEVOPS.git'
+git branch: 'mai', credentialsId: 'GitCredentials', url: 'https://github.com/houdafarh/DEVOPS.git'
 }
 }
 stage("Build") {
