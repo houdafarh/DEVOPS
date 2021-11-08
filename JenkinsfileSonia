@@ -1,4 +1,8 @@
 pipeline {
+	environment {
+registry = "soniaaloui/timesheetproject"
+registryCredential = 'DockerCredentials'
+dockerImage = '' }
     agent any
 stages {
 stage("Git") {
@@ -65,4 +69,4 @@ docker.withRegistry( '', registryCredential ) {
         to: "soniaaloui240@gmail.com"
 )}
     } 
-}
+}}
