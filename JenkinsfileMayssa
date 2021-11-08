@@ -1,13 +1,13 @@
 pipeline {
     environment {
-registry = "230619981123/timesheetpp"
+registry = "230619981123/timesheet"
 registryCredential = 'dockerHub'
 dockerImage = '' }
     agent any
 stages {
 stage("Cloning Project from Git") {
 steps { 
-git branch: 'Mayssa', credentialsId: 'GitCredentials', url: 'https://github.com/houdafarh/DEVOPS.git'
+git branch: 'main', credentialsId: 'GitCredentials', url: 'https://github.com/houdafarh/DEVOPS.git'
 }
 }
 stage("Build") {
@@ -25,6 +25,7 @@ stage("Quality") {
 steps {
 dir("TimesheetProject"){
 bat "mvn sonar:sonar"}
+bat "mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install"
 }}
 
 stage("Clean- Package"){
