@@ -324,3 +324,12 @@ Verify the connector's configuration, identify and stop any process that's liste
 2021-11-07 10:09:19.451  WARN 17060 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=51m34s800ms445µs900ns).
 2021-11-07 13:08:44.622  WARN 17060 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=55m53s93ms720µs600ns).
 2021-11-07 14:00:41.121  WARN 17060 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=28m56s86ms190µs200ns).
+2021-11-07 16:55:45.466  WARN 17060 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=53m30s25ms390µs700ns).
+2021-11-07 18:33:49.613  WARN 17060 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h2m33s551ms372µs900ns).
+2021-11-07 19:09:03.964  WARN 17060 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m14s20ms382µs500ns).
+2021-11-07 20:07:44.783  WARN 17060 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=39m10s472ms933µs900ns).
+2021-11-07 20:37:21.438  INFO 17060 --- [RMI TCP Connection(417)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-11-07 20:37:21.574  INFO 17060 --- [RMI TCP Connection(417)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-11-07 20:37:21.591  INFO 17060 --- [RMI TCP Connection(417)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-07 20:37:21.669  INFO 17060 --- [RMI TCP Connection(417)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-07 20:37:21.693  INFO 17060 --- [RMI TCP Connection(417)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
