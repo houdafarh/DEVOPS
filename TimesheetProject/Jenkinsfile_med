@@ -7,15 +7,6 @@ dockerImage = '' }
 
     stages {
 
-        stage("clone repo") {
-            steps {
-                script {
-
-                    git branch:"main" , credentialsId: "github", url:'https://github.com/houdafarh/DEVOPS.git';
-
-                }
-            }
-        }
 
         stage("mvn clean") {
             steps {
