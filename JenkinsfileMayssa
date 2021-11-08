@@ -24,8 +24,8 @@ bat "mvn test"}
 stage("Quality") {
 steps {
 dir("TimesheetProject"){
-bat "mvn sonar:sonar"}
 bat "mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install"
+bat "mvn sonar:sonar"}
 }}
 
 stage("Clean- Package"){
