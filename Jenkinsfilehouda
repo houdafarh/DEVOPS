@@ -1,13 +1,13 @@
 pipeline {
      environment {
-registry = "houdafarh/timesh"
+registry = "houdafarh/projet"
 registryCredential = 'DockerCredentials'
 dockerImage = '' }
     agent any
 stages {
 stage("Cloning Project from Git") {
 steps { 
-git branch: 'Houda', credentialsId: 'GitCredentials', url: 'https://github.com/houdafarh/DEVOPS.git'
+git branch: 'main', credentialsId: 'GitCredentials', url: 'https://github.com/houdafarh/DEVOPS.git'
 }
 }
 stage("Build") {
