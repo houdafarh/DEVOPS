@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import tn.esprit.spring.controller.RestControlContrat;
 import tn.esprit.spring.entities.Contrat;
 import tn.esprit.spring.repository.ContratRepository;
 import tn.esprit.spring.services.ContratServiceImpl;
@@ -26,7 +27,8 @@ public class ContratServiceImplTest {
 	private static final Logger l = LogManager.getLogger(ContratServiceImplTest.class);
 	@Autowired
 	ContratServiceImpl contratService;
-	
+    @Autowired
+    RestControlContrat ctrler ;
 	@Autowired
 	ContratRepository contratRepository;
 	Date d=new Date(10/01/2021);
