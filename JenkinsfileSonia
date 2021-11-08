@@ -34,11 +34,25 @@ stage("Deploy with Nexus") {
 steps {
 dir("TimesheetProject"){
 bat "mvn clean package deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=Timesheet-spring-boot-core-data-jpa-mvc-REST-1 -Dversion=1.1 -DgeneratePom=true -Dpackaging=jwar -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/Timesheet-spring-boot-core-data-jpa-mvc-REST-1-1.1.war"
-}}
+}              
 }
 }
-post {
-failure {
-mail bcc: '', body: 'test', cc: '', from: '', replyTo: '', subject: 'Jenkins update build status', to: 'soniaaloui240@gmail.com'}
 }
+ post {
+        success {
+    emailext attachLog: true, body: '''End of Pipeline
+Finished: SUCCESS''', subject: '#Success', to: 'soniaaloui240@gmail.com'}
+    failure  {
+    mail(
+        bcc: '',
+        body: "<p>unfortunately a problem has occured during the build</p>",
+        cc: '',
+        charset: 'UTF-8',
+        from: '',
+        mimeType: 'text/html',
+        replyTo: '',
+        subject: "Jenkins update build status",
+        to: "soniaaloui240@gmail.com"
+)}
+    } 
 }
