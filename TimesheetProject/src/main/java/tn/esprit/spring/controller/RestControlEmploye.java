@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -33,7 +32,8 @@ public class RestControlEmploye {
 	@Autowired
 	ITimesheetService itimesheetservice;
 
-
+	
+	// http://localhost:8081/SpringMVC/servlet/ajouterEmployer	
 	@PostMapping("/ajouterEmployer")
 	@ResponseBody
 	public Employe ajouterEmploye()
@@ -65,6 +65,7 @@ public class RestControlEmploye {
 	}
 
 	// http://localhost:8081/SpringMVC/servlet/ajouterContrat
+
 	@PostMapping("/ajouterContrat")
 	@ResponseBody
 	public int ajouterContrat() {

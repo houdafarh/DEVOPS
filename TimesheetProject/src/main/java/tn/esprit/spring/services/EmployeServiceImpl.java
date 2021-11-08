@@ -38,7 +38,6 @@ public class EmployeServiceImpl implements IEmployeService {
 	}
 
 	public void mettreAjourEmailByEmployeId(String email, int employeId) {
-
 		Employe employe = new Employe();
 		Optional<Employe> e = employeRepository.findById(employeId);
 		if(e.isPresent()) {
@@ -46,27 +45,19 @@ public class EmployeServiceImpl implements IEmployeService {
 		employe.setEmail(email);
 		employeRepository.save(employe);
 
-
 	}
 
 	@Transactional	
 	public void affecterEmployeADepartement(int employeId, int depId) {
-
-
-		Departement depManagedEntity = new Departement();
 		Employe employeManagedEntity = new Employe();
-
-		Optional<Departement> dep=deptRepoistory.findById(depId);
-		if(dep.isPresent()) {
-			 depManagedEntity =dep.get();
-		}
-
-		Optional<Employe> emp=employeRepository.findById(employeId);
-		if(emp.isPresent()) {
-			employeManagedEntity =emp.get();
-		}
-
-
+		Optional<Employe> e = employeRepository.findById(employeId);
+		if(e.isPresent()) {
+		employeManagedEntity = e.get();}
+		Departement depManagedEntity = new Departement();
+		Optional<Departement> d = deptRepoistory.findById(depId);
+		if(d.isPresent()) {
+		depManagedEntity = d.get();}
+		
 
 		if(depManagedEntity.getEmployes() == null){
 
@@ -88,12 +79,11 @@ public class EmployeServiceImpl implements IEmployeService {
 		if(d.isPresent()) {
 		dep = d.get();}
 
-
 		int employeNb = dep.getEmployes().size();
 		for(int index = 0; index < employeNb; index++){
 			if(dep.getEmployes().get(index).getId() == employeId){
 				dep.getEmployes().remove(index);
-				break;
+				break;//a revoir
 			}
 		}
 	}
@@ -112,7 +102,6 @@ public class EmployeServiceImpl implements IEmployeService {
 		Optional<Contrat> c = contratRepoistory.findById(contratId);
 		if(c.isPresent()) {
 		contratManagedEntity = c.get();}
-
 		contratManagedEntity.setEmploye(employeManagedEntity);
 		contratRepoistory.save(contratManagedEntity);
 		
@@ -123,7 +112,6 @@ public class EmployeServiceImpl implements IEmployeService {
 		Optional<Employe> e = employeRepository.findById(employeId);
 		if(e.isPresent()) {
 		employeManagedEntity = e.get();}
-
 		return employeManagedEntity.getPrenom();
 	}
 	public void deleteEmployeById(int employeId)
@@ -142,13 +130,14 @@ public class EmployeServiceImpl implements IEmployeService {
 
 		employeRepository.delete(employe);
 	}
+
 	public void deleteContratById(int contratId) {
 		Contrat contratManagedEntity = new Contrat();
 		Optional<Contrat> e = contratRepoistory.findById(contratId);
 		if(e.isPresent()) {
 		contratManagedEntity = e.get();}
-
 		contratRepoistory.delete(contratManagedEntity);
+
 	}
 
 	public int getNombreEmployeJPQL() {
