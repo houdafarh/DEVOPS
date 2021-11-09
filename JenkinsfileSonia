@@ -42,12 +42,12 @@ bat "mvn clean package deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactI
 }
 }
 }
-stage('Docker building ') {
+stage("Docker building") {
 steps {
    dir("TimesheetProject"){
 script {
    dockerImage = docker.build registry}}}}
-stage('Docker pushing') {
+stage("Docker pushing") {
 steps {
    dir("TimesheetProject"){
 script {
