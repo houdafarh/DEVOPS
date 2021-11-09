@@ -1,7 +1,7 @@
 pipeline {
      environment {
 registry = "soniaaloui/timesheetproject"
-registryCredential = 'DockerCredentials'
+registryCredential = 'soniaaloui'
 dockerImage = '' }
     agent any
 stages {
