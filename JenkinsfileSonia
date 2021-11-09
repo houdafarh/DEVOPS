@@ -53,8 +53,8 @@ steps {
 script {
 docker.withRegistry( '', registryCredential ) {
    dockerImage.push()}}}}
-}
- post {
+
+post {
  
     failure  {
     mail(
