@@ -53,14 +53,21 @@ docker.withRegistry( '', registryCredential ) {
    dockerImage.push()}}}}}
 }
 post {
-failure {
-emailext attachLog: true, body: '''There was an error that prevented a Build Success ! 
-Do check the attached log or the console output for further details. 
-Jenkins Team ''', to: 'soniaaloui240@gmail.com' , subject: 'Build Failure on Pipeline'
-    }
-success {
-emailext body: '''Congrats for the successful build! 
-Jenkins Team ''', to: 'soniaaloui240@gmail.com' , subject: 'Build Success on Pipeline'
-    }
+    failure  {
+    mail(
+        body: "<p>unfortunately a problem has occured during the build</p>",
+        charset: 'UTF-8',
+        mimeType: 'text/html',
+        subject: "Jenkins update build status",
+        to: "soniaaloui240@gmail.com"
+)}
+    success{
+    mail(
+        body: "<p>build success</p>",
+        charset: 'UTF-8',
+        mimeType: 'text/html',
+        subject: "Jenkins update build status",
+        to: "soniaaloui240@gmail.com"
+)}
 }
 }
