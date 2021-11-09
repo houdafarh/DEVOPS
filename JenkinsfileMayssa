@@ -63,4 +63,5 @@ Finished: SUCCESS''', subject: '#Success', to: 'mayssa.assyam98@gmail.com'}
     emailext attachLog: true, body: '''End of Pipeline
 Finished: FAILURE''', subject: '#Failure', to: 'mayssa.assyam98@gmail.com'}
     } 
+    
 } 
