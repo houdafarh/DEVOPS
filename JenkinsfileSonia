@@ -64,4 +64,4 @@ docker.withRegistry( '', registryCredential ) {
         subject: "Jenkins update build status",
         to: "soniaaloui240@gmail.com"
 )}
-    } }
+  }  } }
