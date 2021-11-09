@@ -52,21 +52,16 @@ steps {
    dir("TimesheetProject"){
 script {
 docker.withRegistry( '', registryCredential ) {
-   dockerImage.push()}}}}}
+   dockerImage.push()}}}}
 }
  post {
  
     failure  {
     mail(
-        bcc: '',
         body: "<p>unfortunately a problem has occured during the build</p>",
-        cc: '',
         charset: 'UTF-8',
-        from: '',
         mimeType: 'text/html',
-        replyTo: '',
         subject: "Jenkins update build status",
         to: "soniaaloui240@gmail.com"
 )}
-    } 
-}}
+    } }
