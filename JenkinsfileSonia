@@ -41,7 +41,7 @@ bat "mvn clean package deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactI
 }              
 }
 }
-}
+
 stage("Docker building") {
 steps {
    dir("TimesheetProject"){
